@@ -1,14 +1,24 @@
 {
     "name": "opensezme.key",
     "private": true,
-    "version": "0.0.0",
-    "description": "a Sails application",
+    "version": "0.0.1",
+    "description": "A webapp to check the status of, and open/close your garage door.",
+    "contributors": [
+        {
+        "name": "Stephen Aghaulor",
+        "email": "saghaulor@gmail.com"
+        }
+    ],
     "dependencies": {
         "sails": "0.9.3",
         "grunt": "0.4.1",
         "sails-disk": "~0.9.0",
         "ejs": "0.8.4",
         "optimist": "0.3.4"
+    },
+    "devDependencies": {
+      "mocha": "1.12.0",
+      "should": "1.2.2"
     },
     "scripts": {
         "start": "node app.js",
