@@ -1,0 +1,28 @@
+{
+  "name": "opensezme",
+  "description": "A webapp to check the status of and open/close your garage door.",
+  "version": "0.0.1",
+  "contributors": [
+  {
+    "name": "Stephen Aghaulor",
+    "email": "saghaulor@gmail.com"
+    }
+  ],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saghaulor/opensezme.git"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "make test"
+  },
+  "dependencies": {
+    "sails": "0.9.3"
+  },
+  "devDependencies": {
+    "mocha": "1.12.0",
+    "should": "1.2.2",
+    "superagent": "0.15.2"
+  }
+}
