@@ -381,15 +381,58 @@ module.exports = function (grunt) {
 
         // When assets are changed:
         tasks: ['compileAssets', 'linkAssets']
-      }
+      },
+      tidy: {
+        // Testing and standards
+        files: ['Gruntfile.js', 'package.json', 'app.js', 'api/**/*.js', 'assets/js/*.js', 'test/*.js'], // <config:lint.files>',
+        tasks: ['jshint', 'mocha']
+      },
+    },
+
+    jshint: {
+      files: ['Gruntfile.js', 'app.js', 'api/**/*.js'],
+      options: {
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        sub: true,
+        undef: true,
+        boss: true,
+        eqnull: true,
+        browser: true,
+        force: true,
+        node: true,
+        phantom: true,
+        //globals: {
+          //require: true,
+          //define: true,
+          //requirejs: true,
+          //describe: true,
+          //expect: true,
+          //it: true
+        //},
+      },
+    },
+
+    mocha: {
+      all: ['tests/*']
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-mocha');
+
 
   // When Sails is lifted:
   grunt.registerTask('default', [
     'compileAssets',
     'linkAssets',
-    'watch'
+    'jshint',
+    'mocha',
+    'watch',
   ]);
 
   grunt.registerTask('compileAssets', [
